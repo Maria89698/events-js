@@ -1,16 +1,22 @@
+/*
+  Container
+  Title
+  EventList - event: array
+  EventItem - name: string
+              location: string
+              speaker: string
+              type: string ['free', 'vip', 'paid']
+              time: object
+  Container
+*/
+import { Container } from "./Container/Container";
+import { EventList } from "./EventList/EventList";
+import data from "../upcoming-events.json";
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
-  );
-};
+    <Container>
+      <EventList events={data}/>
+    </Container>
+  )
+}
